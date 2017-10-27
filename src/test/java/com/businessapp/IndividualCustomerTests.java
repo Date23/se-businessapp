@@ -1,9 +1,8 @@
 package com.businessapp;
 import org.junit.Test;
 import com.businessapp.model.IndividualCustomer;
-import org.junit.Assert;
 import java.util.Date;
-
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 /**
@@ -51,19 +50,22 @@ public class IndividualCustomerTests {
 
     @Test
     public void testId(){
-        testCustomer.setId("13");
-        assertEquals("13", testCustomer.getId());
+        String s1 = new String("13");
+        testCustomer.setId(s1);
+        assertThat(s1 == testCustomer.getId(), is(true));
     }
 
     @Test
     public void testIdNull(){
-        testCustomer.setId(null);
-        assertEquals(null, testCustomer.getId());
+        String s1 = null;
+        testCustomer.setId(s1);
+        assertThat(s1 == testCustomer.getId(), is(true));
     }
     @Test
     public void testIdEmpty(){
-        testCustomer.setId("");
-        assertEquals("", testCustomer.getId());
+        String s1 = "";
+        testCustomer.setId(s1);
+        assertThat(s1 == testCustomer.getId(), is(true));
     }
 
     @Test

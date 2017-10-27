@@ -63,10 +63,16 @@ class CalculatorLogic implements CalculatorLogicIntf {
 				break;
 
 			case K_VAT:
+
+				double displayValue = Double.parseDouble(CalculatorLogicIntf.DISPLAY.getValue());
+				double vatDisplay = (displayValue/100) + VAT_RATE;
+				double netto = displayValue - vatDisplay;
+
 				CalculatorLogicIntf.SIDEAREA.set(
-					"Brutto:  1,000.00\n" +
-					VAT_RATE + "% MwSt:  159.66\n" +
-					"Netto:  840.34"
+
+					"Brutto: " + displayValue +"\n" +
+					VAT_RATE + "% MwSt: " + vatDisplay +"\n" +
+					"Netto:  " + netto
 				);
 				break;
 
