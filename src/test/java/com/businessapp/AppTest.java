@@ -26,7 +26,7 @@ public class AppTest
      */
     public static Test suite()
     {
-        return new TestSuite( AppTest.class, IndividualCustomerTests.class );
+        return new TestSuite( AppTest.class );
     }
 
     /**
@@ -37,5 +37,3 @@ public class AppTest
         assertTrue( true );
     }
 }
-
-
